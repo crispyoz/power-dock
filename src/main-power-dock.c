@@ -1,4 +1,5 @@
 #include <power-dock.h>
+#include <onion-debug.h>
 
 void usage(const char* progname)
 {
