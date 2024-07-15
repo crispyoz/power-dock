@@ -10,6 +10,9 @@
 extern "C" {
 #endif
 
+#define ONION_SEVERITY_INFO     0
+#define ONION_SEVERITY_DEBUG    1
+
 void onionPrint(int verbosity, char *s, ...);
 
 #ifdef __cplusplus
