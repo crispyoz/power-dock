@@ -1,6 +1,3 @@
-
-onionPrint(ONION_SEVERITY_DEBUG, "   Pulsing ctrl pin: GPIO%d\n", ctrlGpio);
-
 #ifndef _ONIONDEBUG_H_
 #define _ONIONDEBUG_H_
 
