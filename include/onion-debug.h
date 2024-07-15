@@ -17,6 +17,7 @@ extern "C" {
 #define ONION_SEVERITY_DEBUG    4
 
 void onionPrint(int verbosity, char *s, ...);
+void onionSetVerbosity(int verbosity);
 
 #ifdef __cplusplus
 }
