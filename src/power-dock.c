@@ -13,6 +13,7 @@ int enableBatteryLevelIndicator(int dockVersion) {
 		ctrlGpio = POWERDOCK2_CTRL_GPIO;
 	}
 
+        printf("Dock version: %d\n", dockVersion);
 	//Set CTRL GPIO to Low
 	//Wait for 200 ms
 	//Set CTRL GPIO to High
@@ -20,6 +21,7 @@ int enableBatteryLevelIndicator(int dockVersion) {
 	//Set CTRL GPIO back low
 
 	onionPrint(ONION_SEVERITY_DEBUG, "   Pulsing ctrl pin: GPIO%d\n", ctrlGpio);
+
 
 	status = GpioSet(ctrlGpio, 0);
 	usleep(200 * 1000);

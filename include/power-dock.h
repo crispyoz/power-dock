@@ -8,14 +8,16 @@
 #include <errno.h>
 
 #include <gpio.h>
-//#include <onion-debug.h>
 
+//https://openwrt.org/docs/techref/hardware/port.gpio   -- calculating gpio offsets
+//gpio base = cat /sys/class/gpio/gpiochip*/base | head -n1
+// 512
 
-#define POWERDOCK_CTRL_GPIO 			19
-#define POWERDOCK2_CTRL_GPIO 			16
+#define POWERDOCK_CTRL_GPIO 			531 //19
+#define POWERDOCK2_CTRL_GPIO 			528 //16
 
-#define POWERDOCK_BATTERY_LEVEL0_GPIO 	16
-#define POWERDOCK_BATTERY_LEVEL1_GPIO 	18
+#define POWERDOCK_BATTERY_LEVEL0_GPIO           528 //16
+#define POWERDOCK_BATTERY_LEVEL1_GPIO           530 //18
 
 #define POWERDOCK_MAX_BATTERY_LEVEL		4
 
@@ -27,7 +29,7 @@ extern "C" {
 
 //// Functions
 int 		enableBatteryLevelIndicator			(int dockVersion);
-int 		readBatteryLevel					(int *level0, int *level1);
+int 		readBatteryLevel				(int *level0, int *level1);
 int 		convertBatteryInputsToLevel			(int level0, int level1);
 
 

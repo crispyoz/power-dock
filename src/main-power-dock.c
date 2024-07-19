@@ -3,7 +3,7 @@
 
 void usage(const char* progname)
 {
-	printf("\n");
+	printf("Power-dock\n");
 	printf("Usage: %s [-qv] [-l]\n", progname);
 	printf("\n");
 	printf("FUNCTIONALITY:\n");
@@ -13,7 +13,9 @@ void usage(const char* progname)
 	printf(" -l 		show battery level measurement\n");
 	printf(" -q 		quiet: no output\n");
 	printf(" -v 		verbose: lots of output\n");
+	printf(" -2 		Power Dock 2\n");
 	printf(" -h 		help: show this prompt\n");
+        
 	printf("\n");
 }
 
@@ -34,7 +36,7 @@ int main(int argc, char** argv)
 	// save the program name
 	progname 	= argv[0];
 
-	while ((ch = getopt(argc, argv, "vqht2")) != -1) {
+	while ((ch = getopt(argc, argv, "vqht2l")) != -1) {
 		switch (ch) {
 			case 'v':
 				// verbose output
@@ -80,6 +82,7 @@ int main(int argc, char** argv)
 
 		batteryLevel = convertBatteryInputsToLevel(level0, level1);
 
+                printf("Battery Level: %d/%d\n", batteryLevel, POWERDOCK_MAX_BATTERY_LEVEL);
 		onionPrint(ONION_SEVERITY_INFO, " Battery Level: %d/%d\n", batteryLevel, POWERDOCK_MAX_BATTERY_LEVEL);
 	}
 
